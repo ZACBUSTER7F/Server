@@ -1,4 +1,4 @@
-﻿const sendBtn = document.getElementById("sendBtn");
+const sendBtn = document.getElementById("sendBtn");
 const messageInput = document.getElementById("message");
 const responseContainer = document.getElementById("responseContainer");
 
@@ -20,6 +20,7 @@ db.ref("timeline").on("child_added", (snapshot) => {
     const entry = snapshot.val();
     createEntry(entry.text, entry.date);
 });
+
 
 
 function saveToLocalStorage() {
@@ -112,9 +113,11 @@ function sendMessage() {
 
     if (text === "") return;
 
-    // Send to Firebase
-    const entryRef = db.ref("timeline").push();
-    entryRef.set({
+    // Show the entry immediately
+    createEntry(text, date);
+
+    // Save to Firebase
+    db.ref("timeline").push({
         text: text,
         date: date || "",
         createdAt: Date.now()
