@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GROUP TIMELINE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            padding: 40px;
+        }
+
+        .chat-box {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        #message {
+            width: 328px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #cccccc;
+            border-radius: 4px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+            #message:focus {
+                border-color: #4CAF50;
+                box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+            }
+
+        #sendBtn {
+            margin-top: 5px;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #responseContainer {
+            margin-top: 5px
+        }
+
+        .responseBox {
+            border: 1px solid #ccc;
+            padding: 0x;
+            border-radius: 6px;
+            margin-bottom: 0px;
+            cursor: move;
+        }
+
+        .responseText {
+            min-height: 10px;
+            padding: 6px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .buttons {
+            display: none;
+            margin-top: 6px;
+            gap: 4px;
+            flex-wrap: nowrap;
+        }
+
+        .icon-btn {
+            flex: 1;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            border: none;
+        }
+
+        .edit-btn {
+            background: #2196F3;
+        }
+
+        .save-btn {
+            background: #4CAF50;
+            display: none;
+        }
+
+        .delete-btn {
+            background: #e53935;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Add to the Timeline</h2>
+
+    <div class="chat-box">
+        <!-- The input used by JavaScript -->
+        <input id="message" type="text" placeholder="Type an entry...">
+
+        <!-- Button used by JavaScript -->
+        <button id="sendBtn">ADD</button>
+
+        <!-- Timeline entries appear here -->
+        <div id="responseContainer"></div>
+    </div>
+
+    <!-- Load the JavaScript that handles entries + localStorage -->
+    <script src="main.js"></script>
+
+</body>
+</html>
